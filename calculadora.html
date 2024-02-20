@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <p>Digite o 1º número: <input type="text" id="n1"></p>
+    <p>Digite o 2º número: <input type="text" id="n2"></p>
+    <p>Aqui está o resultado: <input type="text" id="result"></p>
+    Operação:
+    <select id="operacao" onchange="calc()">
+        <option>operadores</optgroup>
+        <option>somar</option>  
+        <option>subtrair</option>
+        <option>multiplicar</option>  
+        <option>dividir</option>
+        <option>potencia</option>
+        <option>raiz</option>
+        <option>coseno</option>
+        <option>seno</option>
+        <option>tangente</option>
+    </select>
+    <p><button id="limpar" onclick="limpar()">Limpar tela</button></p>
+    <script type="text/javascript">
+       
+        function somar()
+        {
+          let a= Number(document.getElementById("n1").value);
+          let b= Number(document.getElementById("n2").value);
+          let c= a + b;
+          document.getElementById("result").value=c;
+        }
+
+        function subtrair()
+        {
+          let a= Number(document.getElementById("n1").value);
+          let b= Number(document.getElementById("n2").value);
+          let c= a - b;
+          document.getElementById("result").value=c;
+        }
+
+        function multiplicar()
+        {
+          let a= Number(document.getElementById("n1").value);
+          let b= Number(document.getElementById("n2").value);
+          let c= a * b;
+          document.getElementById("result").value=c;  
+        }
+       
+        function dividir()
+        {
+          let a= Number(document.getElementById("n1").value);
+          let b= Number(document.getElementById("n2").value);
+          let c= a / b;
+          document.getElementById("result").value=c;  
+        }
+
+        function potencia()
+        {
+          let a= Number(document.getElementById("n1").value);
+          let b= Number(document.getElementById('n2').value);
+          let p= Math.pow(a,b);
+          document.getElementById("result").value=p;
+        }
+
+        function raiz()
+        {
+          let a= Number(document.getElementById("n1").value);
+          let r= Math.sqrt(a);
+          document.getElementById("result").value=r;
+        }
+       
+        function cosenox()
+        {
+          let a= Number(document.getElementById("n1").value);
+          let x= a*0.017453286;
+          let cosx= Math.cos(x);
+          document.getElementById("result").value=cosx;
+        }
+
+        function sennox()
+        {
+          let a= Number(document.getElementById("n1").value);
+          let x= a*0.017453286;
+          let sennx= Math.sin(x);
+          document.getElementById("result").value=sennx;
+        }
+
+        function tangentex()
+        {
+          let a= Number(document.getElementById("n1").value);
+          let x= a*0.017453286;
+          let tagx= Math.tan(x);
+          document.getElementById("result").value=tagx;
+        }
+
+        function calc()
+        {
+          let k=document.getElementById("operacao").value;
+          document.getElementById("result").value=k
+          switch (k) {
+            case 'somar':
+              somar();
+              break;
+
+            case 'subtrair':
+              subtrair();
+              break;
+           
+            case 'multiplicar':
+              multiplicar();
+              break;
+           
+            case 'dividir':
+              dividir();
+              break;
+           
+            case 'potencia':
+              potencia();
+              break;
+           
+            case 'raiz':
+              alert('Apenas do 1° número!')  
+              raiz();
+              break;  
+           
+            case 'coseno':
+              alert('Apenas do 1° número!\nResultado em Graus')  
+              cosenox();
+            break;
+
+            case 'seno':
+              alert('Apenas do 1° número!\nResultado em Graus')  
+              sennox();
+            break;
+
+            case 'tangente':
+              alert('Apenas do 1° número!\nResultado em Graus')  
+              tangentex();
+            break;
+          }
+        }
+       
+        function limpar()
+        {
+          document.getElementById("n1").value="",
+          document.getElementById("n2").value="",
+          document.getElementById("result").value=""
+          document.getElementById("operacao").value=""
+        }
+    </script>
+</body>
+</html>
